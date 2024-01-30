@@ -13,7 +13,7 @@ class FeaturedBooksListView extends StatelessWidget {
         bottom: 16,
       ),
       child: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.32,
+        height: MediaQuery.of(context).size.height * 0.25,
         child: ListView.builder(
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
