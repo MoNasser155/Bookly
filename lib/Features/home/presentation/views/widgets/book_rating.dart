@@ -10,18 +10,12 @@ class BookRating extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          '19.99 \$',
-          style: Styles.textStyle20.copyWith(
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        const Spacer(),
         Icon(
           FontAwesomeIcons.solidStar,
           color: Colors.amber[300],
-          size: 18,
+          size: 14,
         ),
         const SizedBox(
           width: 6.3,
@@ -33,10 +27,11 @@ class BookRating extends StatelessWidget {
         const SizedBox(
           width: 5,
         ),
-        Text(
-          '(2999)',
-          style: Styles.textStyle14.copyWith(
-            color: const Color(0xff707070),
+        Opacity(
+          opacity: 0.5,
+          child: Text(
+            '(2999)',
+            style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w600),
           ),
         )
       ],
