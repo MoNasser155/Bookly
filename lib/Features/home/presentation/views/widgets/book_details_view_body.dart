@@ -1,131 +1,32 @@
-import 'package:bookly/Features/home/presentation/views/widgets/book_rating.dart';
-import 'package:bookly/Features/home/presentation/views/widgets/custom_book_image.dart';
-import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'books_action.dart';
+import 'books_details_section.dart';
 import 'custom_book_details_appbar.dart';
-import 'similar_books_list_view.dart';
+import 'similar_books_section.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-    return CustomScrollView(
+    return const CustomScrollView(
       slivers: [
         SliverFillRemaining(
           child: SafeArea(
             child: Column(
               children: [
-                const CustomBookDetailsAppBar(),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: width * 0.22),
-                  child: const CustomBookImage(),
-                ),
-                const SizedBox(
-                  height: 42,
-                ),
-                Text(
-                  'The Jungle Book',
-                  style: Styles.textStyle30.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(
-                  height: 6,
-                ),
-                Opacity(
-                  opacity: 0.7,
-                  child: Text(
-                    'Rudyard Kipling',
-                    style: Styles.textStyle18.copyWith(
-                      fontStyle: FontStyle.italic,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-                const BookRating(),
-                const Expanded(
+                CustomBookDetailsAppBar(),
+                BookDetailsSection(),
+                Expanded(
                   child: SizedBox(
-                    height: 36,
+                    height: 20,
                   ),
                 ),
-                const BooksAction(),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 18),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'You can also like',
-                      style: Styles.textStyle18,
-                    ),
-                  ),
-                ),
-                const SimilarBooksListView(),
+                SimilarBooksSection()
               ],
             ),
           ),
         )
       ],
     );
-
-    // return SafeArea(
-    //   child: Column(
-    //     children: [
-    //       const CustomBookDetailsAppBar(),
-    //       Padding(
-    //         padding: EdgeInsets.symmetric(horizontal: width * 0.22),
-    //         child: const CustomBookImage(),
-    //       ),
-    //       const SizedBox(
-    //         height: 42,
-    //       ),
-    //       Text(
-    //         'The Jungle Book',
-    //         style: Styles.textStyle30.copyWith(
-    //           fontWeight: FontWeight.bold,
-    //         ),
-    //       ),
-    //       const SizedBox(
-    //         height: 6,
-    //       ),
-    //       Opacity(
-    //         opacity: 0.7,
-    //         child: Text(
-    //           'Rudyard Kipling',
-    //           style: Styles.textStyle18.copyWith(
-    //             fontStyle: FontStyle.italic,
-    //             fontWeight: FontWeight.w500,
-    //           ),
-    //         ),
-    //       ),
-    //       const BookRating(),
-    //       const Expanded(
-    //         child: SizedBox(
-    //           height: 36,
-    //         ),
-    //       ),
-    //       const BooksAction(),
-    //       const SizedBox(
-    //         height: 20,
-    //       ),
-    //       const Padding(
-    //         padding: EdgeInsets.only(left: 18),
-    //         child: Align(
-    //           alignment: Alignment.centerLeft,
-    //           child: Text(
-    //             'You can also like',
-    //             style: Styles.textStyle18,
-    //           ),
-    //         ),
-    //       ),
-    //       const SimilarBooksListView()
-    //     ],
-    //   ),
-    // );
   }
 }
