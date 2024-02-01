@@ -10,7 +10,6 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const CustomScrollView(
-      
       slivers: [
         SliverToBoxAdapter(
           child: SafeArea(
@@ -37,7 +36,6 @@ class HomeViewBody extends StatelessWidget {
           ),
         ),
         SliverFillRemaining(
-          
           child: BestSellerBooksListView(),
         )
       ],
